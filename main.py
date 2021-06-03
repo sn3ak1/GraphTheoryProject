@@ -106,7 +106,7 @@ class Solver:
         del self.paths_taken[-1]
         for p_index, path in enumerate(self.paths_taken):
             for e_index, edge in enumerate(path):
-                if edge[0] > edge[1]:
+                if edge[2][0] == '0':
                     for m_p_index, matching_path in enumerate(self.paths_taken):
                         for m_e_index, matching_edge in enumerate(matching_path):
                             if matching_edge[0] == path[e_index][1] and matching_edge[1] == path[e_index][0]:
